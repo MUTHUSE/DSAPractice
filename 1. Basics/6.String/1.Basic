@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    // string declaration
+    string a = "Welcome to our home";
+    cout<<a<<endl;
+    
+    // another method of string declaration
+    string b("Hai, How are you?");
+    cout<<b<<endl;
+    
+    // string concatenation
+    string firstname = "Muthu";
+    string lastname = "Selvi";
+    cout<<firstname<<" "<<lastname<<endl;
+    
+    // another method of string concatenation
+    string fullname = firstname.append(lastname);
+    cout<<fullname<<endl;
+    
+    string name = "Priya Darshini";
+    cout<<name[0]<<endl;
+    
+    // character replacement
+    name[0] = 'D';
+    cout<<name<<endl;
+
+    return 0;
+}
