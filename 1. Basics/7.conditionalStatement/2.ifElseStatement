@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+// all the if statement is to be check when use multiple if clause
+int main()
+{
+    char a;
+    cout<<"\n Enter the a is : ";
+    cin>>a;
+    
+    if(a=='a' || a=='e' || a=='i' || a=='o' || a=='u' || a=='A' || a=='E' || a=='I' || a=='O' || a=='U'){
+        cout<<"\n"<<a<<" is a vowel";
+    }else{
+        cout<<"\n"<<a<<" is not a vowel";
+    }
+    return 0;
+}
