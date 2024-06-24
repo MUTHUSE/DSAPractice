@@ -4,6 +4,7 @@ using namespace std;
  * Break keyword does not use then the 
  * once the condition is true all other also print.
  * the case print until it reach break
+ * Also print default
 */
 int main()
 {
