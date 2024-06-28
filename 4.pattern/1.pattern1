@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 /**
+1. Nested Loops:
+    a. for the outer loop, count the no of rows
+    b. for the inner loop, focus on the column & connect them somehow to the rows
+    c. Print them '*' inside the inner doe loop
+    d. Observe symmetry (optional)
+*/
+/**
  *       ****
  *       ****
  *       ****
