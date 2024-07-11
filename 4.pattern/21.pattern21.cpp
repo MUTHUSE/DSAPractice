@@ -1,5 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
+/**
+M---------M
+-u-------u-
+--t-----t--
+---h---h---
+----u-u----
+-----s-----
+----e-e----
+---l---l---
+--v-----v--
+-i-------i-
+i---------i
+*/
 int main() {
     string s = "Muthuselvii";
     int n = s.size();
