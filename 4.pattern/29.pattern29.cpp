@@ -1,8 +1,18 @@
 // Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
+/*
+ABCDEFGHGFEDCBA
+ABCDEFG GFEDCBA
+ABCDEF   FEDCBA
+ABCDE     EDCBA
+ABCD       DCBA
+ABC         CBA
+AB           BA
+A             A
+*/
 vector<string> revCharBridge(int N) {
-    // code here
+   // code here
     vector<string>ans;
     for(int i = 0; i<N;i++){
         string str;
@@ -11,13 +21,21 @@ vector<string> revCharBridge(int N) {
             str+=ch;
             ch+=1;
         }
-        for(int j = 0;j<i;j++){
-            str+="-";
+        for(int j = 0;j<2*i-1;j++){
+            str+=" ";
         }
-        ch-=2;
-        for(int j = N-(i+1);j>0;j--){
-            str+=ch;
+        if(i==0){
+            ch-=2;
+            for(int j = N-(i+1);j>0;j--){
+                str+=ch;
+                ch-=1;
+            }
+        }else{
             ch-=1;
+            for(int j = N-(i+1);j>=0;j--){
+                str+=ch;
+                ch-=1;
+            }
         }
         ans.push_back(str);
     }
