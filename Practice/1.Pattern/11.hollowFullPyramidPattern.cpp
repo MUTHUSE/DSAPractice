@@ -1,7 +1,26 @@
 // Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
+/*
+    Enter the n value : 5
 
+ Hollow Full Pyramid Pattern 
+    *
+   * *
+  *   *
+ *     *
+*********
+    1
+   1 3
+  1   5
+ 1     7
+123456789
+    A
+   A C
+  A   E
+ A     G
+ABCDEFGHI
+*/
 class base{
     private:
         int i,j,count;
