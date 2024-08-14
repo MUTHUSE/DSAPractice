@@ -4,7 +4,8 @@ using namespace std;
 
 class base{
     private:
-        int i,j;
+        int i,j,count;
+        char ch;
     public:
         void pattern(int n){
             for(i=0;i<n;i++){
@@ -12,9 +13,45 @@ class base{
                     cout<<" ";
                 }
                 for(j=0;j<(2*i)+1;j++){
-                    if(i==0 && i==n-1){
+                    if(j==0 || i == 0 || i == n-1 || j == (2*i)){
                         cout<<"*";
+                    }else{
+                        cout<<" ";
                     }
+                }
+                cout<<"\n";
+            }
+        }
+        void patternNum(int n){
+            for(i=0;i<n;i++){
+                count = 1;
+                for(j=i;j<n-1;j++){
+                    cout<<" ";
+                }
+                for(j=0;j<(2*i)+1;j++){
+                    if(j==0 || i == 0 || i == n-1 || j == (2*i)){
+                        cout<<count;
+                    }else{
+                        cout<<" ";
+                    }
+                    count++;
+                }
+                cout<<"\n";
+            }
+        }
+        void patternChar(int n){
+            for(i=0;i<n;i++){
+                ch = 'A';
+                for(j=i;j<n-1;j++){
+                    cout<<" ";
+                }
+                for(j=0;j<(2*i)+1;j++){
+                    if(j==0 || i == 0 || i == n-1 || j == (2*i)){
+                        cout<<ch;
+                    }else{
+                        cout<<" ";
+                    }
+                    ch+=1;
                 }
                 cout<<"\n";
             }
@@ -29,6 +66,8 @@ int main() {
     
     base B;
     B.pattern(n);
+    B.patternNum(n);
+    B.patternChar(n);
 
     return 0;
 }
