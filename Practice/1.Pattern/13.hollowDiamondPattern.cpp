@@ -1,10 +1,41 @@
 // Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
+/*
+    Enter the n value : 5
 
+ Hollow Diamond Pattern 
+    *
+   * *
+  *   *
+ *     *
+*       *
+ *     *
+  *   *
+   * *
+    *
+    1
+   1 3
+  1   5
+ 1     7
+1       9
+ 1     7
+  1   5
+   1 3
+    1
+    A
+   A C
+  A   E
+ A     G
+A       I
+ A     G
+  A   E
+   A C
+    A
+    */
 class base{
     private:
-        int i,j,count,start,j_start;
+        int i,j,count,start,j_start,end;
         char ch;
     public:
         void pattern(int n){
@@ -12,15 +43,17 @@ class base{
                 if(i>=n){
                     j_start = 0;
                     start = i-n+1;
+                    end = 3*i - 2*n +2 -5*(i-n);
                 }else{
                     j_start = i;
                     start = n-1;
+                    end = (2*i)+1;
                 }
-                for(j=i;j<start;j++){
+                for(j=j_start;j<start;j++){
                     cout<<" ";
                 }
-                for(j=0;j<(2*i)+1;j++){
-                    if(j==0 || j == (2*i)){
+                for(j=0;j<end;j++){
+                    if(j==0 || j == end-1){
                         cout<<"*";
                     }else{
                         cout<<" ";
@@ -30,13 +63,22 @@ class base{
             }
         }
         void patternNum(int n){
-            for(i=0;i<n;i++){
+            for(i=0;i<(2*n)-1;i++){
                 count = 1;
-                for(j=i;j<n-1;j++){
+                if(i>=n){
+                    j_start = 0;
+                    start = i-n+1;
+                    end = 3*i - 2*n +2 -5*(i-n);
+                }else{
+                    j_start = i;
+                    start = n-1;
+                    end = (2*i)+1;
+                }
+                for(j=j_start;j<start;j++){
                     cout<<" ";
                 }
-                for(j=0;j<(2*i)+1;j++){
-                    if(j==0 || i == 0 || i == n-1 || j == (2*i)){
+                for(j=0;j<end;j++){
+                    if(j==0 || j == end-1){
                         cout<<count;
                     }else{
                         cout<<" ";
@@ -47,13 +89,22 @@ class base{
             }
         }
         void patternChar(int n){
-            for(i=0;i<n;i++){
+            for(i=0;i<(2*n)-1;i++){
                 ch = 'A';
-                for(j=i;j<n-1;j++){
+                if(i>=n){
+                    j_start = 0;
+                    start = i-n+1;
+                    end = 3*i - 2*n +2 -5*(i-n);
+                }else{
+                    j_start = i;
+                    start = n-1;
+                    end = (2*i)+1;
+                }
+                for(j=j_start;j<start;j++){
                     cout<<" ";
                 }
-                for(j=0;j<(2*i)+1;j++){
-                    if(j==0 || i == 0 || i == n-1 || j == (2*i)){
+                for(j=0;j<end;j++){
+                    if(j==0 || j == end-1){
                         cout<<ch;
                     }else{
                         cout<<" ";
