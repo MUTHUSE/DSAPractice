@@ -14,6 +14,22 @@ Explnation: Since k is greater than array size, the entire array is reversed.
 Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(1)
   */
+/**
+ Enter the n value : 5
+
+ The a[0] value : 1
+
+ The a[1] value : 2
+
+ The a[2] value : 3
+
+ The a[3] value : 4
+
+ The a[4] value : 5
+
+ Enter the sub array size : 6
+5 4 3 2 1 
+ */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -24,15 +40,17 @@ class Solution
         // code here
         int size = arr.size();
         int count = k, inc = 1;
+        vector<long long int>temp;
+        temp = arr;
         for(int i = 0; i< size; i++){
             if(count == 0){
                 inc++;
                 count = inc*k;
-                while(count>size){
-                    count--;
-                }
             }
-            cout<<arr[count-1]<<" ";
+            while(count>size){
+                count--;
+            }
+            arr[i] = temp[count-1];
             count--;
         }
     }
@@ -43,7 +61,7 @@ int main(){
     cout<<"Enter the n value : ";
     cin>>n;
     
-    vector<int>temp;
+    vector<long long int>temp;
     
     for(int i = 0;i<n;i++){
         cout<<"\n The a["<<i<<"] value : ";
@@ -56,6 +74,9 @@ int main(){
     cin>>k;
     
     Solution s;
-    int test_peak = s.reverseInGroups(&temp, n);
+    s.reverseInGroups(temp, n);
+    for(int i = 0;i<n;i++){
+        cout<<temp[i]<<" ";
+    }
     return 0;
 }
